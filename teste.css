@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+
+.tela{
+    color: #d1a8e0;
+}
+.titulo{
+    color: #d1a8e0;
+}
+
+.links{
+    color: #d1a8e0;
+    margin: 10px;
+}
+
+.img-fluid{
+    margin-top: -30px;
+    margin-left: 100px;
+}
+
+#mochila{
+    margin-left: 85px;
+    margin-top: 50px;
+}
+
+table {
+    border-collapse: collapse;
+  }
+  
+table, th, td {
+    border: 2px solid  #d1a8e0;
+  }
+
+
