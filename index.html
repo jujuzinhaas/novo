@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="teste.js"></script>
+    <link rel="stylesheet" type="text/css" href="teste.css" media="screen" />
+	<title>Aula</title>
+	<style type="text/css">
+		html, body, * {
+			margin: 0;
+			padding: 0;
+		}
+		.tela {
+			display: none;
+		}
+		.tela.active {
+			display: block;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		a.active {
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		#bottom-bar {
+			margin-left: 10px;
+			background: black;
+			bottom: 0;
+			height: 45px;
+			position: fixed;
+			width: 100%;
+		}
+
+
+    </style>
+    
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<img src="fofo.png" class="img-fluid" alt="Imagem responsiva" width="40%" height="40%">
+<div id="container">
+	
+	<div class="tela " id="tela-1">
+	<h1 id = "titulo"> Desenhe aqui na sua sparkles </h1>
+	<img src="matriz.jpg" id="matriz" width="80%"  height="80%">
+	<button class="button button1"><img src="fav.png" width="25px"  height="25px"></button>
+	</div>
+
+	<div class="tela" id="tela-2">
+		<h1 id = "titulo"> Escolha a cor do seu desenho </h1>
+		<img src="matriz.jpg" id="matriz" width= "80%"  height="80%">
+		<script src="jscolor.js"></script>
+		<h1 id="cor">Cor: <input class="jscolor" value="ab2567"> </h1>
+	</div>
+	
+	<div class="tela active" id="tela-3">
+    <img src="mochila2.png" id="mochila" width="80%" height="80%">
+	</div>
+		<div class="tela " id="tela-4">
+		<h1><h1 id = "titulo"> selecione seu layout favorito </h1>
+		<img src="matriz.jpg" id="matriz" width="80%"  height="80%">
+		<img src="matriz.jpg" id="matriz" width="80%"  height="80%">
+		<img src="matriz.jpg" id="matriz" width="80%"  height="80%">
+	</div>
+
+	<div class="tela" id="tela-5">
+		<h1><h1 id = "titulo"> escolha o nivel de intensidade  </h1>
+		<img src="matriz.jpg" id="matriz" width="80%"  height="80%">
+	</div>
+	
+	<div class="tela" id="tela-6">
+		<h1><h1 id = "titulo"> escolha o estilo de brilho </h1>
+		<img src="matriz.jpg" id="matriz" width="80%"  height="80%">
+    </div>
+
+
+</div>
+
+<div id="bottom-bar">
+	<a class="links" href="#tela-1" data-target="tela-1"><img src="desenho.png" width="33px"  height="33px" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"></a>
+	<a class="links" href="#tela-2" data-target="tela-2"><img src="cor.png" width="33px"  height="33px" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"></a>
+	<a class="links active" href="#tela-3" data-target="tela-3"><img src="home.png" width="33px"  height="33px" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"></a>
+	<a class="links" href="#tela-4" data-target="tela-4"><img src="fav.png" width="33px"  height="33px" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"></a>
+	<a class="links" href="#tela-5" data-target="tela-5"><img src="intensidade.png" width="33px"  height="33px" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"></a>
+    <a class="links" href="#tela-6" data-target="tela-6"class="active"><img src="brilho.png" width="33px"  height="33px" onMouseOver="aumenta(this)" onMouseOut="diminui(this)"></a>
+</div>
+
+<script type="text/javascript">
+	
+let links = document.querySelectorAll('#bottom-bar a')
+
+for (link of links) {
+	let target = link.getAttribute('data-target')
+
+	link.addEventListener('click', function() {
+		mudaTela(target)
+	})
+}
+
+
+function mudaTela(target) {
+	let tela_target = document.getElementById(target)
+	let link_target = document.querySelector('a[data-target="'+target+'"]')
+
+	document.querySelector('div.tela.active').classList.remove('active')
+	document.querySelector('a.active').classList.remove('active')
+
+	tela_target.classList.add('active')
+	link_target.classList.add('active')
+}
+
+</script>
+
+</body>
+</html>
